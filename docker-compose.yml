@@ -31,16 +31,5 @@ services:
     depends_on:
       mysqldb:
         condition: service_healthy
-
-  angular-app:
-    container_name: angular-app
-    build:
-      context: ./angular-app
-      dockerfile: Dockerfile
-    ports:
-      - "4200:80"
-    depends_on:
-      - springboot-app
-
 volumes:
   mysqldb-data:
